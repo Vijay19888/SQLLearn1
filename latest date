@@ -1,0 +1,4 @@
+--1. Retrieve the jurisdiction residence with the highest number of COVID deaths for the latest data period end date.
+Select Top 1 Jurisdiction_Residence, data_period_end, COVID_deaths from COVID
+Where data_period_end=(select max(data_period_end) from COVID)
+Order by COVID_deaths DESC
